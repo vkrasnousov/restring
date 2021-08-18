@@ -54,16 +54,17 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                run {
-                    from(components.findByName("release"))
-                    groupId = "dev.vkrasnousov"
-                    artifactId = getArtificatId()
-                    version = getVersionName()
-                }
+                from(components["release"])
+                groupId = "dev.vkrasnousov"
+                artifactId = getArtificatId()
+                version = getVersionName()
             }
         }
-
-
+        repositories {
+            maven {
+                url = uri(layout.buildDirectory.dir("repo"))
+            }
+        }
     }
 }
 
