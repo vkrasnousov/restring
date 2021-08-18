@@ -1,11 +1,3 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.vkrasnousov.restring/restring/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.vkrasnousov.restring/restring)
-[![Build & Test](https://github.com/vkrasnousov/restring/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/vkrasnousov/restring/actions/workflows/build-and-test.yaml)
-[![codecov](https://codecov.io/gh/vkrasnousov/restring/branch/master/graph/badge.svg)](https://codecov.io/gh/vkrasnousov/restring)
-[![javadoc](https://javadoc.io/badge2/dev.vkrasnousov.restring/restring/javadoc.svg)](https://javadoc.io/doc/dev.vkrasnousov.restring/restring)
-
-## Restring 5.1.4
-
-An easy way to replace bundled Strings dynamically, or provide new translations for Android. Also supports plurals & string arrays.
 
 ### 1. Add dependencies
 
