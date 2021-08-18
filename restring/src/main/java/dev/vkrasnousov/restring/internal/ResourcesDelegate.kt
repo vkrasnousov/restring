@@ -58,7 +58,7 @@ internal class ResourcesDelegate(
             if (value != null) String.format(value.toString(), *formatArgs)
             res.getString(id, *formatArgs)
         } catch (e: Exception) {
-            res.getString(id, *formatArgs)
+            runCatching { res.getString(id, *formatArgs) }.getOrDefault("")
         }
     }
 
@@ -66,7 +66,7 @@ internal class ResourcesDelegate(
         setLocale()
 
         val value = getStringFromRepository(id)
-        return value ?: res.getText(id)
+        return runCatching { value ?: res.getText(id) }.getOrDefault("")
     }
 
     fun getText(id: Int, def: CharSequence): CharSequence {
@@ -76,21 +76,25 @@ internal class ResourcesDelegate(
             getStringFromRepository(id)
         }.getOrNull()
 
-        return value ?: res.getText(id, def)
+        return runCatching { value ?: res.getText(id, def) }.getOrDefault("")
     }
 
     fun getQuantityText(id: Int, quantity: Int): CharSequence {
         setLocale()
 
         val value = getQuantityStringFromRepository(id, quantity)
-        return value ?: res.getQuantityText(id, quantity)
+        return runCatching {
+            value ?: res.getQuantityText(id, quantity)
+        }.getOrDefault("")
     }
 
     fun getQuantityString(id: Int, quantity: Int): String {
         setLocale()
 
         val value = getQuantityStringFromRepository(id, quantity)?.toString()
-        return value ?: res.getQuantityString(id, quantity)
+        return runCatching {
+            value ?: res.getQuantityString(id, quantity)
+        }.getOrDefault("")
     }
 
     fun getQuantityString(id: Int, quantity: Int, vararg formatArgs: Any?): String {
@@ -104,7 +108,10 @@ internal class ResourcesDelegate(
                         res.getQuantityString(id, quantity, *formatArgs)
                     }
                 }
-        return value ?: res.getQuantityString(id, quantity, *formatArgs)
+        return runCatching {
+            value ?: res.getQuantityString(id, quantity, *formatArgs)
+        }.getOrDefault("")
+
     }
 
     fun getStringArray(id: Int): Array<String> {

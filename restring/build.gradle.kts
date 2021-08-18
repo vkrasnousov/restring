@@ -1,6 +1,5 @@
 import java.io.FileInputStream
 import java.util.*
-import kotlin.io.*
 
 plugins {
     id("com.android.library")
@@ -46,7 +45,7 @@ val githubProperties = Properties()
 githubProperties.load(FileInputStream(rootProject.file("github.properties")))
 
 fun getVersionName(): String {
-    return "1.0.0"
+    return "1.0.1"
 }
 
 fun getArtificatId(): String {
@@ -57,7 +56,7 @@ publishing {
     publications {
         create<MavenPublication>("gpr") {
             run {
-                groupId = "dev.vkrasnousov.libraries"
+                groupId = "dev.vkrasnousov.libs"
                 artifactId = getArtificatId()
                 version = getVersionName()
                 artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
@@ -75,8 +74,6 @@ publishing {
                 password =
                         githubProperties.get("gpr.key") as String?
                                 ?: System.getenv("GPR_API_KEY")
-                print(username)
-                print(password)
             }
         }
     }
