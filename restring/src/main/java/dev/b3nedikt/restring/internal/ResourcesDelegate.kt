@@ -54,8 +54,12 @@ internal class ResourcesDelegate(
         setLocale()
 
         val value = getStringFromRepository(id)
-        if (value != null) return String.format(value.toString(), *formatArgs)
-        return res.getString(id, *formatArgs)
+        return try {
+            if (value != null) String.format(value.toString(), *formatArgs)
+            res.getString(id, *formatArgs)
+        } catch (e: Exception) {
+            res.getString(id, *formatArgs)
+        }
     }
 
     fun getText(id: Int): CharSequence {
@@ -93,7 +97,13 @@ internal class ResourcesDelegate(
         setLocale()
 
         val value = getQuantityStringFromRepository(id, quantity)?.toString()
-                ?.let { String.format(it, *formatArgs) }
+                ?.let {
+                    try {
+                        String.format(it, *formatArgs)
+                    } catch (e: Exception) {
+                        res.getQuantityString(id, quantity, *formatArgs)
+                    }
+                }
         return value ?: res.getQuantityString(id, quantity, *formatArgs)
     }
 
