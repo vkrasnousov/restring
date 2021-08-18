@@ -1,1 +1,1 @@
-include(":restring", ":example", ":example-java")
+include(":restring")
