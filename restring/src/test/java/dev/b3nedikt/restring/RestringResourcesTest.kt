@@ -1,4 +1,4 @@
-package dev.b3nedikt.restring
+package dev.vkrasnousov.restring
 
 import android.content.Context
 import android.os.Build
@@ -6,7 +6,7 @@ import android.text.Html
 import android.text.TextUtils
 import androidx.core.text.HtmlCompat
 import androidx.test.core.app.ApplicationProvider
-import dev.b3nedikt.restring.internal.RestringResources
+import dev.vkrasnousov.restring.internal.RestringResources
 import org.amshove.kluent.shouldBeEqualTo
 import org.amshove.kluent.shouldNotBeEqualTo
 import org.amshove.kluent.shouldNotBeNull

@@ -1,8 +1,8 @@
-package dev.b3nedikt.restring.internal.repository.model
+package dev.vkrasnousov.restring.internal.repository.model
 
 import android.os.Build
-import dev.b3nedikt.restring.repository.generateQuantityString
-import dev.b3nedikt.restring.repository.generateQuantityText
+import dev.vkrasnousov.restring.repository.generateQuantityString
+import dev.vkrasnousov.restring.repository.generateQuantityText
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Test
 import org.junit.runner.RunWith

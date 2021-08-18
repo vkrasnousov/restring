@@ -1,9 +1,9 @@
-package dev.b3nedikt.restring.repository
+package dev.vkrasnousov.restring.repository
 
 import android.content.Context
 import android.os.Build
 import androidx.test.core.app.ApplicationProvider
-import dev.b3nedikt.restring.PluralKeyword
+import dev.vkrasnousov.restring.PluralKeyword
 import org.amshove.kluent.shouldBeEqualTo
 import org.amshove.kluent.shouldContainSame
 import org.junit.Assert.assertEquals

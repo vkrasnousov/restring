@@ -7,7 +7,7 @@ android {
     compileSdkVersion(AppConfig.compileSdk)
 
     defaultConfig {
-        applicationId = "dev.b3nedikt.restring.example"
+        applicationId = "dev.vkrasnousov.restring.example"
         minSdkVersion(AppConfig.minSdk)
         targetSdkVersion(AppConfig.targetSdk)
         versionCode = 1

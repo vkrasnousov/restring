@@ -1,11 +1,11 @@
-package dev.b3nedikt.restring.activity
+package dev.vkrasnousov.restring.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.ViewPumpAppCompatDelegate
-import dev.b3nedikt.restring.R
-import dev.b3nedikt.restring.Restring
+import dev.vkrasnousov.restring.R
+import dev.vkrasnousov.restring.Restring
 
 class TestActivity : AppCompatActivity() {
 

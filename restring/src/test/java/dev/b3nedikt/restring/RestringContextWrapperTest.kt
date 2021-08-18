@@ -1,10 +1,10 @@
-package dev.b3nedikt.restring
+package dev.vkrasnousov.restring
 
 import android.content.Context
 import android.content.res.Resources
 import android.os.Build
 import androidx.test.core.app.ApplicationProvider
-import dev.b3nedikt.restring.internal.RestringContextWrapper
+import dev.vkrasnousov.restring.internal.RestringContextWrapper
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Before
 import org.junit.Test

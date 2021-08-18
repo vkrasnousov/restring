@@ -1,8 +1,8 @@
-package dev.b3nedikt.restring.internal.repository.model
+package dev.vkrasnousov.restring.internal.repository.model
 
 import android.os.Build
-import dev.b3nedikt.restring.repository.generateStringArray
-import dev.b3nedikt.restring.repository.generateTextArray
+import dev.vkrasnousov.restring.repository.generateStringArray
+import dev.vkrasnousov.restring.repository.generateTextArray
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Test
 import org.junit.runner.RunWith

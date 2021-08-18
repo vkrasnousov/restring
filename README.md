@@ -1,7 +1,7 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.b3nedikt.restring/restring/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.b3nedikt.restring/restring)
-[![Build & Test](https://github.com/B3nedikt/restring/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/B3nedikt/restring/actions/workflows/build-and-test.yaml)
-[![codecov](https://codecov.io/gh/B3nedikt/restring/branch/master/graph/badge.svg)](https://codecov.io/gh/B3nedikt/restring)
-[![javadoc](https://javadoc.io/badge2/dev.b3nedikt.restring/restring/javadoc.svg)](https://javadoc.io/doc/dev.b3nedikt.restring/restring)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.vkrasnousov.restring/restring/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.vkrasnousov.restring/restring)
+[![Build & Test](https://github.com/vkrasnousov/restring/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/vkrasnousov/restring/actions/workflows/build-and-test.yaml)
+[![codecov](https://codecov.io/gh/vkrasnousov/restring/branch/master/graph/badge.svg)](https://codecov.io/gh/vkrasnousov/restring)
+[![javadoc](https://javadoc.io/badge2/dev.vkrasnousov.restring/restring/javadoc.svg)](https://javadoc.io/doc/dev.vkrasnousov.restring/restring)
 
 ## Restring 5.1.4
 
@@ -11,13 +11,13 @@ An easy way to replace bundled Strings dynamically, or provide new translations 
 
 ```groovy
 // Replace bundled strings dynamically
-implementation 'dev.b3nedikt.restring:restring:5.1.4'
+implementation 'dev.vkrasnousov.restring:restring:5.1.4'
 
 // Intercept view inflation
-implementation 'dev.b3nedikt.viewpump:viewpump:4.0.7'
+implementation 'dev.vkrasnousov.viewpump:viewpump:4.0.7'
 
 // Allows to update the text of views at runtime without recreating the activity
-implementation 'dev.b3nedikt.reword:reword:4.0.1'
+implementation 'dev.vkrasnousov.reword:reword:4.0.1'
 ```
 
 ### 2. Initialize
@@ -92,7 +92,7 @@ you set in your xml layout files.
 
 ## App Locale integration
 
-This library was build for easy integration with my library [AppLocale](https://github.com/B3nedikt/AppLocale). AppLocale simplifies managing the Locales supported by your app.
+This library was build for easy integration with my library [AppLocale](https://github.com/vkrasnousov/AppLocale). AppLocale simplifies managing the Locales supported by your app.
 
 To integrate it you need to first create a custom LocaleProvider:
 

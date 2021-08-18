@@ -1,4 +1,4 @@
-package dev.b3nedikt.restring
+package dev.vkrasnousov.restring
 
 import android.os.Build
 import android.view.ViewGroup
@@ -6,10 +6,10 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.test.core.app.ApplicationProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import dev.b3nedikt.restring.activity.TestActivity
-import dev.b3nedikt.restring.internal.DefaultLocaleProvider
-import dev.b3nedikt.reword.RewordInterceptor
-import dev.b3nedikt.viewpump.ViewPump
+import dev.vkrasnousov.restring.activity.TestActivity
+import dev.vkrasnousov.restring.internal.DefaultLocaleProvider
+import dev.vkrasnousov.reword.RewordInterceptor
+import dev.vkrasnousov.viewpump.ViewPump
 import org.amshove.kluent.shouldStartWith
 import org.junit.Before
 import org.junit.Test

@@ -1,7 +1,7 @@
-package dev.b3nedikt.restring.repository
+package dev.vkrasnousov.restring.repository
 
 import androidx.core.text.HtmlCompat
-import dev.b3nedikt.restring.PluralKeyword
+import dev.vkrasnousov.restring.PluralKeyword
 
 internal fun generateStrings(count: Int): Map<String, String> {
     return generateSequence(0, { it + 1 })

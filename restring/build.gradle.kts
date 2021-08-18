@@ -1,9 +1,13 @@
+import java.io.FileInputStream
+import java.util.*
+import kotlin.io.*
+
 plugins {
     id("com.android.library")
     id("kotlin-android")
     id("org.jetbrains.dokka")
     id("jacoco-configuration")
-    id("publication")
+    id("maven-publish")
 }
 
 android {
@@ -34,6 +38,46 @@ android {
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
+        }
+    }
+}
+
+val githubProperties = Properties()
+githubProperties.load(FileInputStream(rootProject.file("github.properties")))
+
+fun getVersionName(): String {
+    return "1.0.0"
+}
+
+fun getArtificatId(): String {
+    return "restring"
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("gpr") {
+            run {
+                groupId = "dev.vkrasnousov.libraries"
+                artifactId = getArtificatId()
+                version = getVersionName()
+                artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/vkrasnousov/${getArtificatId()}")
+            credentials {
+                username = githubProperties.get("gpr.usr") as String?
+                        ?: System.getenv("GPR_USER")
+                password =
+                        githubProperties.get("gpr.key") as String?
+                                ?: System.getenv("GPR_API_KEY")
+                print(username)
+                print(password)
+            }
         }
     }
 }
