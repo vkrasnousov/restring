@@ -41,8 +41,6 @@ android {
     }
 }
 
-val githubProperties = Properties()
-githubProperties.load(FileInputStream(rootProject.file("github.properties")))
 
 fun getVersionName(): String {
     return "1.0.1"
@@ -52,30 +50,20 @@ fun getArtificatId(): String {
     return "restring"
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("gpr") {
-            run {
-                groupId = "dev.vkrasnousov.libs"
-                artifactId = getArtificatId()
-                version = getVersionName()
-                artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                run {
+                    from(components.findByName("release"))
+                    groupId = "dev.vkrasnousov"
+                    artifactId = getArtificatId()
+                    version = getVersionName()
+                }
             }
         }
-    }
 
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/vkrasnousov/${getArtificatId()}")
-            credentials {
-                username = githubProperties.get("gpr.usr") as String?
-                        ?: System.getenv("GPR_USER")
-                password =
-                        githubProperties.get("gpr.key") as String?
-                                ?: System.getenv("GPR_API_KEY")
-            }
-        }
+
     }
 }
 
